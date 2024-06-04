@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul de Dragodindes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calcul de Dragodindes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="calcul.html">Calcul</a></li>
+                <li><a href="mes-dragodindes.html">Mes Dragodindes</a></li>
+                <li><a href="synergies.html">Synergies</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Calcul des probabilités</h2>
+        <div class="dragodinde-form">
+            <h3>Arbre Généalogique</h3>
+            <label>Arrière-grands-parents:</label><br>
+            Père : <select id="agp-pere"><!-- Ajoutez les options ici --></select><br>
+            Mère : <select id="agp-mere"><!-- Ajoutez les options ici --></select><br>
+            <label>Grands-parents:</label><br>
+            Père : <select id="gp-pere"><!-- Ajoutez les options ici --></select><br>
+            Mère : <select id="gp-mere"><!-- Ajoutez les options ici --></select><br>
+            <label>Parents:</label><br>
+            Père : <select id="p-pere"><!-- Ajoutez les options ici --></select><br>
+            Mère : <select id="p-mere"><!-- Ajoutez les options ici --></select><br>
+            <label>Énergie:</label><br>
+            Mâle : <input type="number" id="energie-male"><br>
+            Femelle : <input type="number" id="energie-femelle"><br>
+            <button onclick="calculer()">Calculer</button>
+        </div>
+        <div class="results" id="results">
+            <!-- Les résultats s'afficheront ici -->
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
