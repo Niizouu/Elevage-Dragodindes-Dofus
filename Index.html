@@ -4,119 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Élevage de Dragodindes</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .tab { display: none; }
-        .tab.active { display: block; }
-        .tabs { display: flex; cursor: pointer; }
-        .tabs div { padding: 10px; background: #ddd; margin-right: 5px; }
-        .tabs div.active { background: #aaa; }
-        .dragodinde-form, .results { margin-top: 20px; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Élevage de Dragodindes</h1>
-    <div class="tabs">
-        <div class="tablink active" onclick="openTab(event, 'calcul')">Calcul</div>
-        <div class="tablink" onclick="openTab(event, 'mes-dragodindes')">Mes Dragodindes</div>
-        <div class="tablink" onclick="openTab(event, 'synergies')">Synergies</div>
-    </div>
-
-    <div id="calcul" class="tab active">
-        <h2>Calcul des probabilités</h2>
-        <div class="dragodinde-form">
-            <h3>Arbre Généalogique</h3>
-            <label>Arrière-grands-parents:</label><br>
-            Père : <input type="text" id="agp-pere"><br>
-            Mère : <input type="text" id="agp-mere"><br>
-            <label>Grands-parents:</label><br>
-            Père : <input type="text" id="gp-pere"><br>
-            Mère : <input type="text" id="gp-mere"><br>
-            <label>Parents:</label><br>
-            Père : <input type="text" id="p-pere"><br>
-            Mère : <input type="text" id="p-mere"><br>
-            <label>Énergie:</label><br>
-            Mâle : <input type="number" id="energie-male"><br>
-            Femelle : <input type="number" id="energie-femelle"><br>
-            <button onclick="calculer()">Calculer</button>
-        </div>
-        <div class="results" id="results">
-            <!-- Les résultats s'afficheront ici -->
-        </div>
-    </div>
-
-    <div id="mes-dragodindes" class="tab">
-        <h2>Mes Dragodindes</h2>
-        <button onclick="ajouterDragodinde()">Ajouter une Dragodinde</button>
-        <div id="dragodindes-list">
-            <!-- La liste des dragodindes ajoutées s'affichera ici -->
-        </div>
-    </div>
-
-    <div id="synergies" class="tab">
-        <h2>Synergies</h2>
-        <label>Couleur souhaitée:</label>
-        <input type="text" id="couleur-souhaitee"><br>
-        <button onclick="calculerSynergies()">Calculer Synergies</button>
-        <div id="synergies-results">
-            <!-- Les résultats des synergies s'afficheront ici -->
-        </div>
-    </div>
-
-    <script>
-        function openTab(evt, tabName) {
-            let i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-
-        function calculer() {
-            // Implémentation de la logique de calcul ici
-            let agpPere = document.getElementById("agp-pere").value;
-            let agpMere = document.getElementById("agp-mere").value;
-            let gpPere = document.getElementById("gp-pere").value;
-            let gpMere = document.getElementById("gp-mere").value;
-            let pPere = document.getElementById("p-pere").value;
-            let pMere = document.getElementById("p-mere").value;
-            let energieMale = parseInt(document.getElementById("energie-male").value);
-            let energieFemelle = parseInt(document.getElementById("energie-femelle").value);
-
-            // Calcul des probabilités et du nombre d'enfants
-
-            // Affichage des résultats
-            let resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML = `<p>Résultats des calculs...</p>`;
-        }
-
-        function ajouterDragodinde() {
-            let dragodindesList = document.getElementById("dragodindes-list");
-            let dragodindeForm = `
-                <div class="dragodinde">
-                    <label>Nom: </label><input type="text" class="nom-dd"><br>
-                    <label>Sexe: </label><select class="sexe-dd"><option value="male">Mâle</option><option value="femelle">Femelle</option></select><br>
-                    <label>Énergie: </label><input type="number" class="energie-dd"><br>
-                    <label>Couleur: </label><input type="text" class="couleur-dd"><br>
-                    <label>Prédisposée génétique: </label><input type="checkbox" class="predispo-dd"><br>
-                    <button onclick="enregistrerDragodinde(this)">Enregistrer</button>
-                </div>
-            `;
-            dragodindesList.innerHTML += dragodindeForm;
-        }
-
-        function enregistrerDragodinde(button) {
-            let parent = button.parentNode;
-            let nom = parent.querySelector('.nom-dd').value;
-            let sexe = parent.querySelector('.sexe-dd').value;
-            let energie = parent.querySelector('.energie-dd').value;
-            let couleur = parent.querySelector('.couleur-dd').value;
-            let predispo = parent.querySelector('.predispo-dd').checked;
-
-            // Sauvegarder les informations de la dragodinde (par exemple,
+    <header>
+        <h1>Élevage de Dragodindes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="calcul.html">Calcul</a></li>
+                <li><a href="mes-dragodindes.html">Mes Dragodindes</a></li>
+                <li><a href="synergies.html">Synergies</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Bienvenue sur l'outil d'élevage de Dragodindes</h2>
+        <p>Sélectionnez un onglet pour commencer.</p>
+    </main>
+</body>
+</html>
