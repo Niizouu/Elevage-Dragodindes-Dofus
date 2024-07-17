@@ -17,56 +17,75 @@
     </nav>
 
     <h1>Calcul des probabilités des Dragodindes</h1>
-    <div>
-        <label>Arrière-grand-père (père) :</label>
-        <select id="agp-pere" class="color-select"></select>
+    
+    <div class="container">
+        <div class="table-container">
+            <h2>Père</h2>
+            <div>
+                <label>Arrière-grand-père :</label>
+                <select id="agp-pere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Arrière-grand-mère :</label>
+                <select id="agp-mere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Grand-père :</label>
+                <select id="gp-pere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Grand-mère :</label>
+                <select id="gp-mere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Père :</label>
+                <select id="p-pere" class="color-select"></select>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h2>Mère</h2>
+            <div>
+                <label>Arrière-grand-père :</label>
+                <select id="agp-mere-pere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Arrière-grand-mère :</label>
+                <select id="agp-mere-mere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Grand-père :</label>
+                <select id="gp-mere-pere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Grand-mère :</label>
+                <select id="gp-mere-mere" class="color-select"></select>
+            </div>
+            <div>
+                <label>Mère :</label>
+                <select id="p-mere" class="color-select"></select>
+            </div>
+        </div>
     </div>
-    <div>
-        <label>Arrière-grand-mère (père) :</label>
-        <select id="agp-mere" class="color-select"></select>
+
+    <div class="container">
+        <div class="table-container">
+            <h2>Énergie</h2>
+            <div>
+                <label>Énergie (Mâle) :</label>
+                <input type="number" id="energie-male">
+            </div>
+            <div>
+                <label>Énergie (Femelle) :</label>
+                <input type="number" id="energie-femelle">
+            </div>
+            <button onclick="calculer()">Calculer</button>
+        </div>
     </div>
-    <div>
-        <label>Grand-père (père) :</label>
-        <select id="gp-pere" class="color-select"></select>
+
+    <div id="results">
+        <p>Résultats des calculs...</p>
     </div>
-    <div>
-        <label>Grand-mère (père) :</label>
-        <select id="gp-mere" class="color-select"></select>
-    </div>
-    <div>
-        <label>Père :</label>
-        <select id="p-pere" class="color-select"></select>
-    </div>
-    <div>
-        <label>Mère :</label>
-        <select id="p-mere" class="color-select"></select>
-    </div>
-    <div>
-        <label>Arrière-grand-père (mère) :</label>
-        <select id="agp-mere-pere" class="color-select"></select>
-    </div>
-    <div>
-        <label>Arrière-grand-mère (mère) :</label>
-        <select id="agp-mere-mere" class="color-select"></select>
-    </div>
-    <div>
-        <label>Grand-père (mère) :</label>
-        <select id="gp-mere-pere" class="color-select"></select>
-    </div>
-    <div>
-        <label>Grand-mère (mère) :</label>
-        <select id="gp-mere-mere" class="color-select"></select>
-    </div>
-    <div>
-        <label>Énergie (Mâle) :</label>
-        <input type="number" id="energie-male">
-    </div>
-    <div>
-        <label>Énergie (Femelle) :</label>
-        <input type="number" id="energie-femelle">
-    </div>
-    <button onclick="calculer()">Calculer</button>
-    <div id="results"></div>
 
     <h2>Ajouter une Dragodinde</h2>
     <div id="dragodindes-list"></div>
