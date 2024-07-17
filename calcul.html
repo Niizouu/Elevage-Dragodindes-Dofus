@@ -6,104 +6,117 @@
     <title>Calcul des probabilités des Dragodindes</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .genealogy-tree {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
         }
         .ancestor-group {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 10px;
-        }
-        .ancestor {
-            border: 1px solid #000;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .ancestor select, .ancestor input {
-            margin-top: 5px;
-        }
-        .parent-group {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-        .result-section {
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <h1>Calcul des probabilités des Dragodindes</h1>
-    <div class="genealogy-tree">
-        <div class="ancestor-group">
-            <div class="ancestor">
-                <label>Arrière-grand-père (père) :</label>
-                <select id="agp-pere" class="color-select"></select>
-            </div>
-            <div class="ancestor">
-                <label>Arrière-grand-mère (père) :</label>
-                <select id="agp-mere" class="color-select"></select>
-            </div>
-        </div>
-        <div class="ancestor-group">
-            <div class="ancestor">
-                <label>Grand-père (père) :</label>
-                <select id="gp-pere" class="color-select"></select>
-            </div>
-            <div class="ancestor">
-                <label>Grand-mère (père) :</label>
-                <select id="gp-mere" class="color-select"></select>
-            </div>
-        </div>
-        <div class="ancestor-group">
-            <div class="ancestor">
-                <label>Père :</label>
-                <select id="p-pere" class="color-select"></select>
-            </div>
-            <div class="ancestor">
-                <label>Énergie (Mâle) :</label>
-                <input type="number" id="energie-male">
-            </div>
-        </div>
-        <div class="ancestor-group">
-            <div class="ancestor">
-                <label>Arrière-grand-père (mère) :</label>
-                <select id="agp-mere-pere" class="color-select"></select>
-            </div>
-            <div class="ancestor">
-                <label>Arrière-grand-mère (mère) :</label>
-                <select id="agp-mere-mere" class="color-select"></select>
-            </div>
-        </div>
-        <div class="ancestor-group">
-            <div class="ancestor">
-                <label>Grand-père (mère) :</label>
-                <select id="gp-mere-pere" class="color-select"></select>
-            </div>
-            <div class="ancestor">
-                <label>Grand-mère (mère) :</label>
-                <select id="gp-mere-mere" class="color-select"></select>
-            </div>
-        </div>
-        <div class="ancestor-group">
-            <div class="ancestor">
-                <label>Mère :</label>
-                <select id="p-mere" class="color-select"></select>
-            </div>
-            <div class="ancestor">
-                <label>Énergie (Femelle) :</label>
-                <input type="number" id="energie-femelle">
-            </div>
-        </div>
-    </div>
-
-    <button onclick="calculer()">Calculer</button>
-    <div id="results" class="result-section"></div>
+    <table>
+        <tbody>
+            <tr>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-père (père) :</label>
+                    <select id="agp-pere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-mère (père) :</label>
+                    <select id="agp-mere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-père (père) :</label>
+                    <select id="agp-pere2" class="color-select"></select>
+                </td>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-mère (père) :</label>
+                    <select id="agp-mere2" class="color-select"></select>
+                </td>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-père (mère) :</label>
+                    <select id="agp-mere-pere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-mère (mère) :</label>
+                    <select id="agp-mere-mere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-père (mère) :</label>
+                    <select id="agp-mere-pere2" class="color-select"></select>
+                </td>
+                <td class="ancestor-group">
+                    <label>Arrière-grand-mère (mère) :</label>
+                    <select id="agp-mere-mere2" class="color-select"></select>
+                </td>
+            </tr>
+            <tr>
+                <td class="ancestor-group" colspan="4">
+                    <label>Grand-père (père) :</label>
+                    <select id="gp-pere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group" colspan="4">
+                    <label>Grand-mère (père) :</label>
+                    <select id="gp-mere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group" colspan="4">
+                    <label>Grand-père (mère) :</label>
+                    <select id="gp-mere-pere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group" colspan="4">
+                    <label>Grand-mère (mère) :</label>
+                    <select id="gp-mere-mere" class="color-select"></select>
+                </td>
+            </tr>
+            <tr>
+                <td class="ancestor-group" colspan="8">
+                    <label>Père :</label>
+                    <select id="p-pere" class="color-select"></select>
+                </td>
+                <td class="ancestor-group" colspan="8">
+                    <label>Mère :</label>
+                    <select id="p-mere" class="color-select"></select>
+                </td>
+            </tr>
+            <tr>
+                <td class="ancestor-group" colspan="16">
+                    <label>Mâle :</label>
+                    <input type="number" id="energie-male">
+                </td>
+                <td class="ancestor-group" colspan="16">
+                    <label>Femelle :</label>
+                    <input type="number" id="energie-femelle">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="32" class="result-section">
+                    <div id="results"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
     <h2>Ajouter une Dragodinde</h2>
     <div id="dragodindes-list"></div>
