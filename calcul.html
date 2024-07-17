@@ -15,153 +15,93 @@
             padding: 10px;
             text-align: center;
             border-radius: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-        select, input[type="number"] {
+        select {
             width: 100%;
             padding: 5px;
-            margin-top: 5px;
-        }
-        .ancestor-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
     </style>
 </head>
 <body>
     <h1>Calcul des probabilités des Dragodindes</h1>
-    
-    
-    <table>
-	<tbody>
-		<tr>
-			<td>Arrière-grand-père</td>
-			<td>Arrière-grand-mère</td>
-			<td>Arrière-grand-père</td>
-			<td>Arrière-grand-mère</td>
-			<td>Arrière-grand-père </td>
-			<td>Arrière-grand-mère </td>
-			<td>Arrière-grand-père</td>
-			<td>Arrière-grand-mère</td>
-			<td>Arrière-grand-père</td>
-			<td>Arrière-grand-mère</td>
-			<td>Arrière-grand-père</td>
-			<td>Arrière-grand-mère</td>
-			<td>Arrière-grand-père</td>
-			<td>Arrière-grand-mère</td>
-			<td>Arrière-grand-père</td>
-			<td>Arrière-grand-mère</td>
-		</tr>
-		<tr>
-			<td colspan="2">Grand-père</td>
-			<td colspan="2">Grand-mère</td>
-			<td colspan="2">Grand-père</td>
-			<td colspan="2">Grand-mere</td>
-			<td colspan="2">Grand-père</td>
-			<td colspan="2">Grand-mère</td>
-			<td colspan="2">Grand-père</td>
-			<td colspan="2">Grand-mère</td>
-		</tr>
-		<tr>
-			<td colspan="4">Père</td>
-			<td colspan="4">Mère </td>
-			<td colspan="4">Père</td>
-			<td colspan="4">Mère</td>
-		</tr>
-		<tr>
-			<td colspan="8">Male</td>
-			<td colspan="8">Femelle</td>
-		</tr>
-		<tr>
-			<td colspan="16">Résultat </td>
-		</tr>
-	</tbody>
-</table>
-
-
-
     <table>
         <tbody>
             <tr>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-père (père) :</label>
-                    <select id="agp-pere" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-père (mâle paternel) :</label>
+                    <select id="AGPMP" class="color-select"></select>
                 </td>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-mère (père) :</label>
-                    <select id="agp-mere" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-mère (mâle paternel) :</label>
+                    <select id="AGMMP" class="color-select"></select>
                 </td>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-père (père) :</label>
-                    <select id="agp-pere2" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-père (mâle maternel) :</label>
+                    <select id="AGPMM" class="color-select"></select>
                 </td>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-mère (père) :</label>
-                    <select id="agp-mere2" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-mère (mâle maternel) :</label>
+                    <select id="AGMMM" class="color-select"></select>
                 </td>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-père (mère) :</label>
-                    <select id="agp-mere-pere" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-père (femelle paternel) :</label>
+                    <select id="AGPPF" class="color-select"></select>
                 </td>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-mère (mère) :</label>
-                    <select id="agp-mere-mere" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-mère (femelle paternel) :</label>
+                    <select id="AGMPF" class="color-select"></select>
                 </td>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-père (mère) :</label>
-                    <select id="agp-mere-pere2" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-père (femelle maternel) :</label>
+                    <select id="AGPMF" class="color-select"></select>
                 </td>
-                <td class="ancestor-group">
-                    <label>Arrière-grand-mère (mère) :</label>
-                    <select id="agp-mere-mere2" class="color-select"></select>
-                </td>
-            </tr>
-            <tr>
-                <td class="ancestor-group" colspan="4">
-                    <label>Grand-père (père) :</label>
-                    <select id="gp-pere" class="color-select"></select>
-                </td>
-                <td class="ancestor-group" colspan="4">
-                    <label>Grand-mère (père) :</label>
-                    <select id="gp-mere" class="color-select"></select>
-                </td>
-                <td class="ancestor-group" colspan="4">
-                    <label>Grand-père (mère) :</label>
-                    <select id="gp-mere-pere" class="color-select"></select>
-                </td>
-                <td class="ancestor-group" colspan="4">
-                    <label>Grand-mère (mère) :</label>
-                    <select id="gp-mere-mere" class="color-select"></select>
+                <td>
+                    <label>Arrière-grand-mère (femelle maternel) :</label>
+                    <select id="AGMMF" class="color-select"></select>
                 </td>
             </tr>
             <tr>
-                <td class="ancestor-group" colspan="8">
+                <td colspan="2">
+                    <label>Grand-père (mâle paternel) :</label>
+                    <select id="GPMP" class="color-select"></select>
+                </td>
+                <td colspan="2">
+                    <label>Grand-mère (mâle paternel) :</label>
+                    <select id="GMMP" class="color-select"></select>
+                </td>
+                <td colspan="2">
+                    <label>Grand-père (mâle maternel) :</label>
+                    <select id="GPMM" class="color-select"></select>
+                </td>
+                <td colspan="2">
+                    <label>Grand-mère (mâle maternel) :</label>
+                    <select id="GMMM" class="color-select"></select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
                     <label>Père :</label>
-                    <select id="p-pere" class="color-select"></select>
+                    <select id="Pere" class="color-select"></select>
                 </td>
-                <td class="ancestor-group" colspan="8">
+                <td colspan="4">
                     <label>Mère :</label>
-                    <select id="p-mere" class="color-select"></select>
+                    <select id="Mere" class="color-select"></select>
                 </td>
             </tr>
             <tr>
-                <td class="ancestor-group" colspan="16">
+                <td colspan="8">
                     <label>Mâle :</label>
-                    <input type="number" id="energie-male">
+                    <select id="Male" class="color-select"></select>
                 </td>
-                <td class="ancestor-group" colspan="16">
+                <td colspan="8">
                     <label>Femelle :</label>
-                    <input type="number" id="energie-femelle">
+                    <select id="Femelle" class="color-select"></select>
                 </td>
             </tr>
             <tr>
-                <td colspan="32" class="result-section">
+                <td colspan="16">
+                    <button onclick="calculer()">Calculer</button>
                     <div id="results"></div>
                 </td>
             </tr>
